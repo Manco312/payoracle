@@ -1,0 +1,11 @@
+Django>=4.2
+pandas
+numpy
+scikit-learn
+matplotlib
+seaborn
+joblib
+imbalanced-learn
+openai
+python-dotenv
+markdown
