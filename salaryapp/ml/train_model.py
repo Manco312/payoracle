@@ -53,15 +53,17 @@ def main(data_path, out_dir="model_files"):
         ("cat", OneHotEncoder(handle_unknown="ignore", sparse_output=False), cat_cols)
     ], remainder='drop')
 
-    # pipeline con RF (puedes probar GB también)
+    # pipeline con GB
     pipeline = Pipeline([
         ("pre", preprocessor),
-        ("clf", RandomForestClassifier(random_state=42, n_jobs=-1))
+        ("clf", GradientBoostingClassifier(random_state=42))
     ])
 
+    # Mismo GRID usado en analisis previo
     param_grid = {
-        "clf__n_estimators": [100],
-        "clf__max_depth": [5, 7, None]
+        'clf__n_estimators': [100, 200],
+        'clf__learning_rate': [0.05, 0.1, 0.2],
+        'clf__max_depth': [3, 5, 7]
     }
 
     gs = GridSearchCV(pipeline, param_grid=param_grid, cv=3, n_jobs=-1)
