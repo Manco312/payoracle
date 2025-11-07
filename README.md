@@ -6,6 +6,7 @@ Su objetivo es **predecir si una persona tendrá un salario anual mayor o menor 
 Además de la predicción, **PayOracle** ofrece una **probabilidad asociada a la estimación** y **sugerencias personalizadas** generadas mediante la API de **OpenAI**, que ayudan al usuario a identificar posibles factores de mejora para alcanzar un salario superior.
 
 Dataset Usado: [https://www.kaggle.com/datasets/mosapabdelghany/adult-income-prediction-dataset](https://www.kaggle.com/datasets/mosapabdelghany/adult-income-prediction-dataset)
+
 Video Demo: []()
 
 ---
