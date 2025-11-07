@@ -7,8 +7,6 @@ from django.conf import settings
 from dotenv import load_dotenv
 import markdown
 
-# Asegúrate de fijar OPENAI_API_KEY en las variables de entorno o .env
-
 def home(request):
     if request.method == "POST":
         form = SalaryForm(request.POST)
@@ -33,7 +31,6 @@ def home(request):
             }
 
             # map keys to dataset column names expected by the pipeline
-            # Ajusta si tu pipeline espera nombres sin puntos.
             # Aquí asumimos columnas sin puntos: education_num, capital_gain, hours_per_week, native_country, etc.
             mapped = {
                 "age": data["age"],
@@ -58,7 +55,6 @@ def home(request):
             }
 
             # Prepare input for model: pick the keys that your trained pipeline expects.
-            # Aquí asumiré que el pipeline fue entrenado con columnas sin puntos:
             model_input = {
                 "age": mapped["age"],
                 "workclass": mapped["workclass"],
@@ -75,7 +71,6 @@ def home(request):
                 "native.country": mapped["native_country"]
             }
 
-            # Ajusta keys según como estuvieron en tu CSV. Lo importante: coincide con entrenamiento.
             # Llamamos al predict
             try:
                 pred, prob = predict_from_dict(model_input)
@@ -103,7 +98,7 @@ def home(request):
 def call_openai_suggestions(input_data, prediction):
     """
     Llama a la API de OpenAI para pedir sugerencias prácticas para mejorar salario.
-    Se espera que OPENAI_API_KEY esté en las variables de entorno.
+    Se espera que openAI_api_key esté en las variables de entorno.
     """
     _ = load_dotenv('openAI.env')
 
