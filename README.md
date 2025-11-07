@@ -7,7 +7,7 @@ Además de la predicción, **PayOracle** ofrece una **probabilidad asociada a la
 
 Dataset Usado: [https://www.kaggle.com/datasets/mosapabdelghany/adult-income-prediction-dataset](https://www.kaggle.com/datasets/mosapabdelghany/adult-income-prediction-dataset)
 
-Video Demo: []()
+Video Demo: [https://youtu.be/2mu28kbf3j4](https://youtu.be/2mu28kbf3j4)
 
 ---
 
