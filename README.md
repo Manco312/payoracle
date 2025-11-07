@@ -20,6 +20,8 @@ pip install -r requirements.txt
 
 ## 🔁 Entrenar el modelo (obligatorio antes de usar la app)
 
+En caso de no tener el `model.pkl` dentro de la carpeta `model_files` de la app, realizar el siguiente comando:
+
 ```bash
 python salaryapp/ml/train_model.py --data_path salaryapp/ml/adult.csv --out_dir salaryapp/ml/model_files
 ```
